@@ -4,64 +4,66 @@ const { Deepgram } = require('@deepgram/sdk')
 const ffmpeg = require('ffmpeg-static')
 //conect to forntend
 const express = require('express');
-const cors = require('cors')
-const bodyParser = require('body-parser');
-const server = express()
+// const cors = require('cors')
+// const bodyParser = require('body-parser');
+const app = express()
+app.use('/', (req,res)=>{
+    res.send('server is running');
+});
 
-server.use(cors());
-server.use(bodyParser.json());
 
-server.post('/demo', (req, res) => {
-    console.log(req.body.URL);
-    const url = req.body.URL.split('/')
-    const urlID = url[url.length-1]
-    const deepgram = new Deepgram('354fbf020859834aedffe589b44e0775908c5e5a')
-    const YD = new YoutubeMp3Downloader({
-        ffmpegPath: ffmpeg,
-        outputPath: './',
-        youtubeVideoQuality: 'highestaudio',
-    })
+// app.use(cors());
+// app.use(bodyParser.json());
 
-    YD.download(urlID)
+// server.post('/', (req, res) => {
+    // console.log(req.body.URL);
+    // const url = req.body.URL.split('/')
+    // const urlID = url[url.length-1]
+    // const deepgram = new Deepgram('354fbf020859834aedffe589b44e0775908c5e5a')
+    // const YD = new YoutubeMp3Downloader({
+    //     ffmpegPath: ffmpeg,
+    //     outputPath: './',
+    //     youtubeVideoQuality: 'highestaudio',
+    // })
 
-    YD.on('progress', (data) => {
-        console.log(data.progress.percentage + '% downloaded')
-    }) 
+    // YD.download(urlID)
 
-    YD.on('finished', async (err, video) => {
-        // console.log(err);
-        const videoFileName = video.file
-        console.log(`Downloaded ${videoFileName}`)
+    // YD.on('progress', (data) => {
+    //     console.log(data.progress.percentage + '% downloaded')
+    // }) 
 
-        const file = {
-            buffer: fs.readFileSync(videoFileName),
-            mimetype: 'audio/mp3',
-        }
-        const options = {
-            punctuate: true, 
-        } 
+    // YD.on('finished', async (err, video) => {
+    //     // console.log(err);
+    //     const videoFileName = video.file
+    //     console.log(`Downloaded ${videoFileName}`)
 
-        const result = await deepgram.transcription
-            .preRecorded(file, options)
-            .catch((e) => console.log(e))
-        console.log(result)
+    //     const file = {
+    //         buffer: fs.readFileSync(videoFileName),
+    //         mimetype: 'audio/mp3',
+    //     }
+    //     const options = {
+    //         punctuate: true, 
+    //     } 
 
-        const transcript = result.results.channels[0].alternatives[0].transcript
+    //     const result = await deepgram.transcription
+    //         .preRecorded(file, options)
+    //         .catch((e) => console.log(e))
+    //     console.log(result)
 
-        //   fs.writeFileSync(
-        //     `${videoFileName}.txt`,
-        //     transcript,
-        //     () => `Wrote ${videoFileName}.txt`
-        //   )
+    //     const transcript = result.results.channels[0].alternatives[0].transcript
 
-        fs.unlinkSync(videoFileName)
-        const obj = { 'transcript': transcript }
-        res.send(obj)
-    })
-})
+    //     //   fs.writeFileSync(
+    //     //     `${videoFileName}.txt`,
+    //     //     transcript,
+    //     //     () => `Wrote ${videoFileName}.txt`
+    //     //   )
 
-server.listen(8080, () => {
-    console.log('server is started')
-})
+    //     fs.unlinkSync(videoFileName)
+    //     const obj = { 'transcript': transcript }
+        // res.send('hello Aditya')
+    // })
+// })
+
+app.listen(5000, console.log('server is started'))
 
 

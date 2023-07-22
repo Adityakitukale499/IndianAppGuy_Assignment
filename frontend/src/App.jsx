@@ -58,7 +58,7 @@ function App() {
     }
     console.log(urlId);
     setLoading(true)
-    const respons = await fetch('http://localhost:8080/demo', {
+    const respons = await fetch('http://localhost:8080/', {
       method:'POST',
       body: JSON.stringify(url),
       headers: {
