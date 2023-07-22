@@ -1,0 +1,101 @@
+
+.flex{
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  background-color: #e7e7e7;
+}
+.background{
+  background-image: url('https://youtubetranscript.com/static/img/bg-masthead.jpg') ;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  height: 200%;
+  /* max-width: 100em; */
+  background-position: center; 
+  background-position-x: center;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: -75px; */
+}
+.background h1{
+  margin-bottom: 15px;
+  font-weight: 500;
+  margin-top: 70px;
+}
+.status{ 
+  font-size: 45px;
+  margin-top: 10px;
+}
+ label{
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin: 5px;
+}
+#url{
+  width: 350px;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+  outline: 0;
+  padding: 8px;
+  margin: 5px;
+  font-size: 18px;
+} 
+.btn{
+  padding: 8px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #007bff;
+  color: #fff;
+}
+.btn:hover{
+  background-color: #004d9f;
+  border:1px solid #011d3c;
+}
+.information{
+  padding: 25px;
+  font-size: 18px;
+  color: rgb(43, 43, 43);
+  width: 75%;
+}
+@media screen and (max-width:700px) {
+  .flex{
+    flex-direction: column;
+  }
+  #url{
+    width: 260px;
+  }
+  .information{
+    padding: 10px;
+    font-size: 15px;
+    width: 100%;
+  }
+  .background h1{
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width:450px){
+  .information{
+    display: none;
+  }
+  .background{
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  .background h1{
+    font-size: 25px;
+    padding: 0;
+  }
+  label{
+    font-size: 15px;
+    margin: 0;
+    /* padding: 0; */
+  }
+  #url{
+    width: 120px;
+  }
+}

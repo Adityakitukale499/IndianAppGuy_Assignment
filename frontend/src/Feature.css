@@ -1,0 +1,32 @@
+.features_icons{
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+.card{
+    text-align: center;
+    margin: 45px;
+}
+.card > i{
+    font-size: 100px;
+    transition: 0.9;
+    color: rgb(69, 165, 197);
+}
+.card > h2{
+    font-weight: 400;
+    padding: 5px;
+    font-size: 25px;
+}
+.card > p{
+    color: rgb(67, 66, 66);
+    font-size: 17px;
+}
+.card:hover i{
+    transform: scale(1.1);
+}
+@media screen and (max-width:1000px) {
+    .features_icons{
+        flex-direction: column;
+    }
+}
