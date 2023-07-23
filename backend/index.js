@@ -10,14 +10,16 @@ const server = express()
 
 server.use(cors(
     {
-        origin:'*', 
+        origin:["https://indian-app-guy-assignment-forntend.vercel.app"], 
         credentials:true,    
-        optionSuccessStatus:200,
+        methods: ["POST","GET"],
      }
 ));
 server.use(bodyParser.json());
-
-server.post('/', (req, res) => {
+server.get('/',(req,res)=>{
+    res.json('hello backend this side')
+})
+server.post('/sendData', (req, res) => {
     console.log(req.body.URL);
     const url = req.body.URL.split('/')
     const urlID = url[url.length-1]
