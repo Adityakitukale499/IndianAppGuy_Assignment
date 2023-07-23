@@ -26,6 +26,7 @@ server.get('/',(req,res)=>{
 })
 server.post('/sendData', (req, res) => {
     console.log(req.body);
+     res.setHeader('Access-Control-Allow-Origin', '*');
     const url = req.body.URL.split('/')
     // console.log(); 
     const urlID = url[url.length-1]
