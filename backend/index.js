@@ -11,7 +11,7 @@ const server = express()
 //server.use(cors());
 server.use((req, res, next)=>{
     console.log("myRespons" ,res);
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5174');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     next()
     res.setHeader(
