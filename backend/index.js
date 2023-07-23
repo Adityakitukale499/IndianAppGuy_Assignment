@@ -9,19 +9,21 @@ const bodyParser = require('body-parser');
 const server = express()
 
 server.use(cors(
-    {
-        origin:["https://indian-app-guy-assignment-forntend.vercel.app"], 
-        credentials:true,    
-        methods: ["POST","GET"],
-     }
+    // {
+    //     origin:["https://indian-app-guy-assignment-forntend.vercel.app"], 
+    //     credentials:true,    
+    //     methods: ["POST","GET"],
+    //  }
 ));
+server.use(express.json());
 server.use(bodyParser.json());
 server.get('/',(req,res)=>{
     res.json('hello backend this side')
 })
 server.post('/sendData', (req, res) => {
-    console.log(req.body.URL);
+    console.log(req.body);
     const url = req.body.URL.split('/')
+    // console.log(); 
     const urlID = url[url.length-1]
     const deepgram = new Deepgram('354fbf020859834aedffe589b44e0775908c5e5a')
     const YD = new YoutubeMp3Downloader({
