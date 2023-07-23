@@ -61,6 +61,7 @@ function App() {
     const respons = await fetch('https://indian-app-guy-assignment-backend.vercel.app/', {
       method:'POST',
       body: JSON.stringify(url),
+      mode:'no-cors',
       headers: {
         'Content-Type': 'application/json'
       }
