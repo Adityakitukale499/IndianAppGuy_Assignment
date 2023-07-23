@@ -14,6 +14,10 @@ server.use((req, res, next)=>{
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5174');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     next()
+    res.setHeader(
+                    "Access-Control-Allow-Headers",
+                    "Origin,Authorization,X-Requested-With,content-type,Accept"
+                );
 })
 server.use(express.json());
 server.use(bodyParser.json());
