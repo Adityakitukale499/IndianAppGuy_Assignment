@@ -58,16 +58,20 @@ function App() {
     }
     console.log(urlId);
     setLoading(true)
-    const respons = await fetch('http://localhost:8080/', {
+    const respons = await fetch('https://indian-app-guy-assignment-backend.vercel.app/', {
       method:'POST',
       body: JSON.stringify(url),
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       }
     }) 
     console.log(respons.ok);
     setStatus(respons.ok)
-    const data = await respons.json()
+    if(respons.ok){
+      const data = await respons.json()
+    }
+    
     setLoading(false)
     console.log(data?.transcript);
     setTranscript(data.transcript)
