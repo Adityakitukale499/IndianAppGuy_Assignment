@@ -8,13 +8,12 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 const server = express()
 
-server.use(cors(
-    // {
-    //     origin:["https://indian-app-guy-assignment-forntend.vercel.app"], 
-    //     credentials:true,    
-    //     methods: ["POST","GET"],
-    //  }
-));
+//server.use(cors());
+server.use((req, res, next)=>{
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5174');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    next()
+})
 server.use(express.json());
 server.use(bodyParser.json());
 server.get('/',(req,res)=>{
