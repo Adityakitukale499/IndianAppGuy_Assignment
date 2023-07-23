@@ -8,7 +8,13 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 const server = express()
 
-server.use(cors());
+server.use(cors(
+    {
+        origin:'*', 
+        credentials:true,    
+        optionSuccessStatus:200,
+     }
+));
 server.use(bodyParser.json());
 
 server.post('/', (req, res) => {
