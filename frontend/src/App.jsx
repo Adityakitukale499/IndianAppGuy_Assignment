@@ -68,10 +68,8 @@ function App() {
     }) 
     console.log(respons.ok);
     setStatus(respons.ok)
-    if(respons.ok){
-      const data = await respons.json()
-    }
-    
+    const data = await respons.json()
+       
     setLoading(false)
     console.log(data?.transcript);
     setTranscript(data.transcript)
