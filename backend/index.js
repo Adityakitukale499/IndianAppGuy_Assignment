@@ -19,7 +19,7 @@ server.use(bodyParser.json());
 server.get('/',(req,res)=>{
     res.json('hello backend this side')
 })
-server.get('/sendData', (req, res) => {
+server.post('/sendData', (req, res) => {
     console.log(req.body.URL);
     const url = req.body.URL.split('/')
     const urlID = url[url.length-1]
@@ -64,7 +64,7 @@ server.get('/sendData', (req, res) => {
 
         fs.unlinkSync(videoFileName)
         const obj = { 'transcript': transcript }
-        res.send(obj)
+        res.json(obj)
     })
 })
 

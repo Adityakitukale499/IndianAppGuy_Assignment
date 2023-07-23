@@ -30,6 +30,7 @@ function App() {
     }
     else{
       setViewStatus('Failed to parse URL')
+      setLoading(false)
     }
   },[status])
   useEffect(()=>{
