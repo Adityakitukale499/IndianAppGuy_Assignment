@@ -12,6 +12,10 @@ const server = express()
 server.use((req, res, next)=>{
     console.log("myRespons" ,res);
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  
     next()
 })
 server.use(express.json());
