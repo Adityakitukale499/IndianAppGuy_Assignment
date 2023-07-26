@@ -60,7 +60,7 @@ function App() {
     console.log(urlId);
     setLoading(true)
     console.log(JSON.stringify(url));
-    const respons = await fetch('https://indian-app-guy-assignment-backend.vercel.app/sendData', {
+    const respons = await fetch('https://youtubetranscript-backend.onrender.com/sendData', {
       method:'POST',
       body: JSON.stringify(url),
       headers: {
