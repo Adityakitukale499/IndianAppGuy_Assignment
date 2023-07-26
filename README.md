@@ -24,10 +24,10 @@
 ## How to Run
 * Ensure you have Node.js and npm installed.
 * Clone or download the project repository.
-* Navigate to the backend folder and run the following commands:
+* Navigate to the backend folder and run the following commands </br>
   ```npm install```
   ```npm start```
-* Open a new terminal and navigate to the frontend folder, then run
+* Open a new terminal and navigate to the frontend folder, then run </br>
   ```npm install```
   ```npm run dev```
 
