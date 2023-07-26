@@ -28,7 +28,7 @@
   ```npm install```
   ```npm start```
 * Open a new terminal and navigate to the frontend folder, then run </br>
-  ```npm install```
+  ```npm install``` 
   ```npm run dev```
 
 ## Important Notes
