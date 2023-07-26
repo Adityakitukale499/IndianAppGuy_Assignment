@@ -25,11 +25,11 @@
 * Ensure you have Node.js and npm installed.
 * Clone or download the project repository.
 * Navigate to the backend folder and run the following commands:
-  npm install
-  npm start
+  ```npm install```
+  ```npm start```
 * Open a new terminal and navigate to the frontend folder, then run
-    npm install
-  npm run dev
+  ```npm install```
+  ```npm run dev```
 
 ## Important Notes
 * To use the Deepgram speech-to-text API, you need an API key. In this project, the API key is hard-coded in the backend (index.js). For security reasons, it's better to use environment variables or a more secure method to handle the API key.
